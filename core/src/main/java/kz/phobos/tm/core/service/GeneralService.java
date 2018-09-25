@@ -67,7 +67,7 @@ public class GeneralService implements IGeneralService {
     }
 
     @Override
-    public List<EventUserRate> getAllEventUserRte() {
+    public List<EventUserRate> getAllEventUserRate() {
         return eventUserRateJpaRepo.findAll();
     }
 

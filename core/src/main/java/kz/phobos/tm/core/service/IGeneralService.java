@@ -16,7 +16,7 @@ public interface IGeneralService {
     List<EventUserMap> getAllEventUserMap();
     EventUserMap getEventUserMapById(Integer id);
 
-    List<EventUserRate> getAllEventUserRte();
+    List<EventUserRate> getAllEventUserRate();
     EventUserRate getEventUserRateById(Integer id);
 
     List<RateValue> getAllRateValue();
