@@ -24,7 +24,7 @@ public class GeneralController {
     }
 
     @GetMapping("/event/{id}")
-    Event getEventById(@PathVariable(value = "id") Integer id) {
+    public Event getEventById(@PathVariable(value = "id") Integer id) {
         return service.getEventById(id);
     }
 
@@ -44,7 +44,7 @@ public class GeneralController {
     }
 
     @GetMapping("/eventUserMap/{id}")
-    EventUserMap getEventUserMapById(@PathVariable(value = "id") Integer id) {
+    public EventUserMap getEventUserMapById(@PathVariable(value = "id") Integer id) {
         return service.getEventUserMapById(id);
     }
     @GetMapping("/eventUserRate")
@@ -53,7 +53,7 @@ public class GeneralController {
     }
 
     @GetMapping("/eventUserRate/{id}")
-    EventUserRate getEventUserRateById(@PathVariable(value = "id") Integer id) {
+   public EventUserRate getEventUserRateById(@PathVariable(value = "id") Integer id) {
         return service.getEventUserRateById(id);
     }
 
@@ -72,7 +72,7 @@ public class GeneralController {
         return service.getAllRoute();
     }
     @GetMapping("/route/{id}")
-    Route getRouteById(@PathVariable(value = "id") Integer id) {
+   public Route getRouteById(@PathVariable(value = "id") Integer id) {
         return service.getRouteById(id);
     }
     @GetMapping("/routeLevel")
@@ -80,7 +80,7 @@ public class GeneralController {
         return service.getAllRouteLevel();
     }
     @GetMapping("/routeLevel/{id}")
-    RouteLevel getRouteLevelById(@PathVariable(value = "id") Integer id) {
+   public RouteLevel getRouteLevelById(@PathVariable(value = "id") Integer id) {
         return service.getRouteLevelById(id);
     }
     @GetMapping("/routeStatus")
@@ -88,7 +88,7 @@ public class GeneralController {
         return service.getAllRouteStatus();
     }
     @GetMapping("/routeStatus/{id}")
-    RouteStatus getRouteStatusById(@PathVariable(value = "id") Integer id) {
+    public RouteStatus getRouteStatusById(@PathVariable(value = "id") Integer id) {
         return service.getRouteStatusById(id);
     }
 
@@ -98,7 +98,7 @@ public class GeneralController {
     }
 
     @GetMapping("/user/{id}")
-    User getUserById(@PathVariable(value = "id") Integer id) {
+   public User getUserById(@PathVariable(value = "id") Integer id) {
         return service.getUserById(id);
     }
 
