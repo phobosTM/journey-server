@@ -4,6 +4,7 @@ package kz.phobos.tm.core.controller;
 import kz.phobos.tm.core.model.*;
 import kz.phobos.tm.core.service.IGeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
