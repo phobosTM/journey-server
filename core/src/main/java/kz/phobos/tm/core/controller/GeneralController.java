@@ -75,6 +75,7 @@ public class GeneralController {
         return service.getRouteById(id);
     }
     @GetMapping("/routeLevel")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<RouteLevel> getAllRouteLevel(){
         return service.getAllRouteLevel();
     }
@@ -83,6 +84,7 @@ public class GeneralController {
         return service.getRouteLevelById(id);
     }
     @GetMapping("/routeStatus")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<RouteStatus> getAllRouteStatus(){
         return service.getAllRouteStatus();
     }
