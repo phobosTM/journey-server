@@ -13,6 +13,8 @@ public class User {
     private String firstName;
     private String lastName;
     private Date bDate;
+    private String password;
+    private int enabled;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +26,16 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Basic
+    @Column(name = "enabled")
+    public int getEnabled() {
+        return enabled;
+    }
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
+
 
     @Basic
     @Column(name = "username")
@@ -75,6 +87,18 @@ public class User {
         this.bDate = bDate;
     }
 
+    @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -85,7 +109,9 @@ public class User {
                 Objects.equals(email, user.email) &&
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
-                Objects.equals(bDate, user.bDate);
+                Objects.equals(password, user.password) &&
+                Objects.equals(bDate, user.bDate)&&
+                Objects.equals(enabled, user.enabled);
     }
 
     @Override

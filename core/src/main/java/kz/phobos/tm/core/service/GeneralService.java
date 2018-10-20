@@ -125,4 +125,9 @@ public class GeneralService implements IGeneralService {
     public User getUserById(Integer id) {
         return userJpaRepo.findOne(id);
     }
+
+    @Override
+    public void addUser(User user) {
+        userJpaRepo.save(user);
+    }
 }

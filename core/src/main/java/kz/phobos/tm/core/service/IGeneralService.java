@@ -34,5 +34,8 @@ public interface IGeneralService {
     List<User> getAllUser();
     User getUserById(Integer id);
 
+    //Post Method
+    void addUser(User user) throws Exception;
+
 
 }
