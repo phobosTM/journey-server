@@ -7,6 +7,7 @@ import kz.phobos.tm.core.model.User;
 import kz.phobos.tm.core.model.Event;
 import kz.phobos.tm.core.service.IGeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,6 +19,10 @@ import org.springframework.web.bind.annotation.*;
 import kz.phobos.tm.core.service.IGeneralService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+=======
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.*;
+>>>>>>> 597df0d96ce2398994d3edee7abb872fd6b13c54
 
 import javax.validation.Valid;
 
@@ -79,6 +84,7 @@ public class GeneralController {
     }
 
     @GetMapping("/route")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Route> getAllRoute(){
         return service.getAllRoute();
     }
@@ -87,6 +93,7 @@ public class GeneralController {
         return service.getRouteById(id);
     }
     @GetMapping("/routeLevel")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<RouteLevel> getAllRouteLevel(){
         return service.getAllRouteLevel();
     }
@@ -95,6 +102,7 @@ public class GeneralController {
         return service.getRouteLevelById(id);
     }
     @GetMapping("/routeStatus")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<RouteStatus> getAllRouteStatus(){
         return service.getAllRouteStatus();
     }

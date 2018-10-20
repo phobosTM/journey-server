@@ -52,7 +52,7 @@ public class GeneralService implements IGeneralService {
     }
 
     @Override
-    public EventStatus getEventStatusById(Integer id) {
+    public EventStatus getEventStatusById(Integer id)    {
         return eventStatusJpaRepo.findOne(id);
     }
 
