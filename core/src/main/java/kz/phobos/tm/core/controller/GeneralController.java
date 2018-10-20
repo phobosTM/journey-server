@@ -3,28 +3,12 @@ package kz.phobos.tm.core.controller;
 
 import java.util.List;
 import kz.phobos.tm.core.model.*;
-import kz.phobos.tm.core.model.User;
 import kz.phobos.tm.core.model.Event;
 import kz.phobos.tm.core.service.IGeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-
-import kz.phobos.tm.core.service.IGeneralService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-=======
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.*;
->>>>>>> 597df0d96ce2398994d3edee7abb872fd6b13c54
-
-import javax.validation.Valid;
 
 
 @RestController
@@ -34,16 +18,16 @@ public class GeneralController {
     @Autowired
     private IGeneralService service;
 
-    @GetMapping("/event")
-    public List<Event> getAllEvent() {
-        return service.getAllEvent();
-    }
-
-    @GetMapping("/event/{id}")
-    public Event getEventById(@PathVariable(value = "id") Integer id) {
-        return service.getEventById(id);
-    }
-
+//    @GetMapping("/event")
+//    public List<Event> getAllEvent() {
+//        return service.getAllEvent();
+//    }
+//
+//    @GetMapping("/event/{id}")
+//    public Event getEventById(@PathVariable(value = "id") Integer id) {
+//        return service.getEventById(id);
+//    }
+//
 
     @GetMapping("/eventStatus")
     public List<EventStatus> getAllEventStatus() {

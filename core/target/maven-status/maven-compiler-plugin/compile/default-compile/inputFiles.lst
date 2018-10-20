@@ -2,6 +2,7 @@ C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\Route.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\EventUserMap.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\RouteLevelJpaRepo.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\util\ApplicationSwaggerConfig.java
+C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\controller\EventRestController.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\RateValue.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\UserJpaRepo.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\GeneralService.java
@@ -12,8 +13,10 @@ C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\RateVa
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\EventUserRateJpaRepo.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\UserService\IUserService.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\RouteLevel.java
+C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\EventService\EventService.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\RouteJpaRepo.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\EventUserRate.java
+C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\EventService\IEventService.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\EventStatusJpaRepo.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\UserService\UserService.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\IGeneralService.java

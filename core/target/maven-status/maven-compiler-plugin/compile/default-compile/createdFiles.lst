@@ -5,7 +5,9 @@ kz\phobos\tm\core\model\RateValue.class
 kz\phobos\tm\core\service\IGeneralService.class
 kz\phobos\tm\core\model\EventUserRate.class
 kz\phobos\tm\core\repository\RouteJpaRepo.class
+kz\phobos\tm\core\service\EventService\EventService.class
 kz\phobos\tm\core\model\Route.class
+kz\phobos\tm\core\controller\EventRestController.class
 kz\phobos\tm\core\repository\EventUserMapJpaRepo.class
 kz\phobos\tm\core\repository\EventJpaRepo.class
 kz\phobos\tm\core\service\UserService\IUserService.class
@@ -13,6 +15,7 @@ kz\phobos\tm\core\controller\UserRestController.class
 kz\phobos\tm\core\model\User.class
 kz\phobos\tm\core\repository\EventStatusJpaRepo.class
 kz\phobos\tm\core\repository\RouteLevelJpaRepo.class
+kz\phobos\tm\core\service\EventService\IEventService.class
 kz\phobos\tm\core\repository\EventUserRateJpaRepo.class
 kz\phobos\tm\core\model\EventUserMap.class
 kz\phobos\tm\core\model\RouteStatus.class
