@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/general")
 public class GeneralController {
 
     @Autowired
     private IGeneralService service;
+
 
 
 
@@ -30,6 +30,7 @@ public class GeneralController {
     public Event getEventById(@PathVariable(value = "id") Integer id) {
         return service.getEventById(id);
     }
+
 
 
     @GetMapping("/eventStatus")
