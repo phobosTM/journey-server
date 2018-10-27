@@ -1,7 +1,9 @@
 package kz.phobos.tm.api.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -14,6 +16,12 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -36,7 +44,10 @@ import java.util.stream.Collectors;
                 "kz.phobos.tm.core.repository"
         }
 )
-public class CoreConfig {
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+@ConditionalOnProperty( "basic.authentication.enabled" )
+public class CoreConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Primary
     @ConfigurationProperties(prefix = "spring.core.datasource")
@@ -77,6 +88,35 @@ public class CoreConfig {
         } catch (IOException e) {
             return new HashMap<String, Object>();
         }
+    }
+
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/securityNone").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .httpBasic().and()
+                .csrf().disable();
+    }
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .jdbcAuthentication()
+                .dataSource(dataSource)
+                .usersByUsernameQuery("select username,password,enabled from admins where username=?")
+                .authoritiesByUsernameQuery("select username,role from roles where username=?");
+    }
+
+    @SuppressWarnings("deprecation")
+    @Bean
+    public static NoOpPasswordEncoder passwordEncoder() {
+        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
 
 }

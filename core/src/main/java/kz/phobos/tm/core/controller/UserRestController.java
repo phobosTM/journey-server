@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -23,19 +24,23 @@ public class UserRestController {
     @Autowired
     private IUserService userService;
 
+
+    @PreAuthorize("hasRole(@roles.ADMIN) or hasRole(@roles.USER_ADMIN)")
     @GetMapping("/user")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<User> getAllUser() {
         return  userService.getAllUser();
     }
 
+
+    @PreAuthorize("hasRole(@roles.ADMIN) or hasRole(@roles.USER_ADMIN)")
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable(value = "id") Integer id) {
         return userService.getUserById(id);
     }
 
 
-
+    @PreAuthorize("hasRole(@roles.USER_ADMIN)")
     @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<User> addUser(@RequestBody @Valid User user, BindingResult bindingResult) throws DataException{
 
@@ -50,6 +55,7 @@ public class UserRestController {
     }
 
 
+    @PreAuthorize("hasRole(@roles.USER_ADMIN)")
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<User> deleteUser(@PathVariable("userId") int userId){
         User user = this.userService.getUserById(userId);
@@ -61,7 +67,7 @@ public class UserRestController {
         return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
     }
 
-
+    @PreAuthorize("hasRole(@roles.USER_ADMIN)")
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<User> updateUser(@PathVariable("userId") int userId, @RequestBody @Valid User user,
                                              BindingResult bindingResult, UriComponentsBuilder ucBuilder) {

@@ -4,11 +4,13 @@ C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\RouteL
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\util\ApplicationSwaggerConfig.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\RateValue.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\UserJpaRepo.java
+C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\security\Roles.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\GeneralService.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\controller\UserRestController.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\RouteStatus.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\controller\GeneralController.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\RateValueJpaRepo.java
+C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\Role.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\EventUserRateJpaRepo.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\service\UserService\IUserService.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\RouteLevel.java
@@ -23,3 +25,4 @@ C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\EventU
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\Event.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\EventStatus.java
 C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\repository\EventJpaRepo.java
+C:\journey\journey-server\core\src\main\java\kz\phobos\tm\core\model\Admin.java
